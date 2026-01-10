@@ -1,0 +1,6 @@
+# Secrets
+config/*.env
+
+# Logs
+*.log
+
