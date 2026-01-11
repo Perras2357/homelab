@@ -26,6 +26,20 @@ for CT in $LXC_IDS; do
     continue
   fi
 
+# -----------------------------
+  # Préparer le SSH de l'utilisateur admin
+  # -----------------------------
+  pct exec "$CT" -- bash -c "
+    mkdir -p /home/$ADMIN_USER/.ssh &&
+    touch /home/$ADMIN_USER/.ssh/authorized_keys &&
+    chown -R $ADMIN_USER:$ADMIN_USER /home/$ADMIN_USER/.ssh &&
+    chmod 700 /home/$ADMIN_USER/.ssh &&
+    chmod 600 /home/$ADMIN_USER/.ssh/authorized_keys
+  "
+  echo "[OK] Dossier .ssh et authorized_keys préparés pour $ADMIN_USER sur CT $CT"
+
+
+
   pct exec "$CT" -- bash -c "
     echo '$ADMIN_USER ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/$ADMIN_USER &&
     chmod 440 /etc/sudoers.d/$ADMIN_USER &&
