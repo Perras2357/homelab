@@ -1,0 +1,16 @@
+---
+- name: Test Ansible connectivity to LXC nodes
+  hosts: lxc
+  gather_facts: false   # pas besoin de récupérer les facts pour un simple ping
+  tasks:
+    - name: Ping all nodes
+      ansible.builtin.ping:
+
+    - name: Display hostname for verification
+      ansible.builtin.command: hostname
+      register: hostname_output
+
+    - name: Show hostname result
+      ansible.builtin.debug:
+        msg: "Node {{ inventory_hostname }} reports hostname: {{ hostname_output.stdout }}"
+
