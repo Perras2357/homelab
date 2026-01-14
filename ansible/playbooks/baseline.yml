@@ -1,0 +1,19 @@
+- name: Baseline LXC
+  hosts: lxc
+  become: true
+  tasks:
+    - name: Mise à jour apt
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Paquets communs
+      apt:
+        name:
+          - curl
+          - vim
+          - htop
+          - ca-certificates
+          - gnupg
+        state: present
+
