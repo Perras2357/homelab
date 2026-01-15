@@ -4,3 +4,6 @@ config/*.env
 # Logs
 *.log
 
+# Ansible
+ansible/inventory.ini
+ansible/vault/

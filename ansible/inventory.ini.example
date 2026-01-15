@@ -1,0 +1,10 @@
+[lxc]
+lxc-node-1 ansible_host=100.64.0.10
+lxc-node-2 ansible_host=100.64.0.11
+lxc-node-3 ansible_host=100.64.0.12
+
+[lxc:vars]
+ansible_user=admin
+ansible_ssh_private_key_file=~/.ssh/id_ansible
+ansible_python_interpreter=/usr/bin/python3
+
