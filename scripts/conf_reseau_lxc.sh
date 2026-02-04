@@ -43,7 +43,10 @@ if [ -f "$file" ]; then
 		# Ajoute seulement celles qui manquent
    		sudo grep -qxF "$line1" "$file" || printf '%s\n' "$line1" | sudo tee -a "$file" >/dev/null
     		sudo grep -qxF "$line2" "$file" || printf '%s\n' "$line2" | sudo tee -a "$file" >/dev/null
-    		echo "[OK] Lignes ajoutées"
+    		
+		pct restart $num
+
+		echo "[OK] Lignes ajoutées et conteneur redémarré"
   	fi
 else
 
