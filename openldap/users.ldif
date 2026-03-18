@@ -1,0 +1,19 @@
+#compte admin humain
+dn: uid=adminperras,ou=users,dc=perras,dc=fr
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+uid: adminperras
+cn: Admin Perras
+sn: Perras
+givenName: Admin
+mail: adminperras@perras.fr
+userPassword: {SSHA}td5rbDsowHD2I51qFxwEd25qRqXeOaQ9
+
+# Compte service Grafana (no-login, notifications uniquement)
+dn: cn=grafana-alerts,ou=services,dc=perras,dc=fr
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: grafana-alerts
+description: Compte service notifications Grafana
+userPassword: {SSHA}DbWN/LEjBT3PS4C8HaDtIHC101mx5bSf
