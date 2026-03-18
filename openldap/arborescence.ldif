@@ -1,0 +1,95 @@
+# Groupe ou=groups
+dn: ou=groups,dc=perras,dc=fr
+objectClass: organizationalUnit
+ou: groups
+
+# Admins infra
+dn: cn=admins,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: admins
+description: Administrateurs infra - acces complet
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Infra limitee
+dn: cn=infra,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: infra
+description: Acces infra limite - jumpserver restreint
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Jumpserver admins
+dn: cn=jumpserver-admins,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: jumpserver-admins
+description: Acces complet jumpserver
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Jumpserver limite
+dn: cn=jumpserver-limited,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: jumpserver-limited
+description: Acces jumpserver restreint
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Boites mail
+dn: cn=mail-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: mail-users
+description: Utilisateurs avec boite mail
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Services publics
+dn: cn=users-public,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: users-public
+description: Acces services publics - Jellyfin, Wiki lecture
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Services prives
+dn: cn=users-private,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: users-private
+description: Acces services prives - n8n, PBS, messagerie
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Services hybrides
+dn: cn=users-hybrid,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: users-hybrid
+description: Acces services hybrides - Grafana, Wiki edition
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Wiki
+dn: cn=wiki-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: wiki-users
+description: Acces Wiki
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Jellyfin
+dn: cn=jellyfin-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: jellyfin-users
+description: Acces Jellyfin
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# Grafana
+dn: cn=grafana-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: grafana-users
+description: Acces Grafana
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# n8n
+dn: cn=n8n-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: n8n-users
+description: Acces n8n
+member: uid=testmail,ou=users,dc=perras,dc=fr
+
+# ProxmoxBS
+dn: cn=proxmbs-users,ou=groups,dc=perras,dc=fr
+objectClass: groupOfNames
+cn: proxmbs-users
+description: Acces ProxmoxBackupServer
+member: uid=testmail,ou=users,dc=perras,dc=fr
