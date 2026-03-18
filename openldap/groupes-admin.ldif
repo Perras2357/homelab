@@ -1,0 +1,29 @@
+# admins
+dn: cn=admins,ou=groups,dc=perras,dc=fr
+changetype: modify
+add: member
+member: uid=adminperras,ou=users,dc=perras,dc=fr
+
+# mail-users
+dn: cn=mail-users,ou=groups,dc=perras,dc=fr
+changetype: modify
+add: member
+member: uid=adminperras,ou=users,dc=perras,dc=fr
+
+# grafana-users
+dn: cn=grafana-users,ou=groups,dc=perras,dc=fr
+changetype: modify
+add: member
+member: uid=adminperras,ou=users,dc=perras,dc=fr
+
+# users-private
+dn: cn=users-private,ou=groups,dc=perras,dc=fr
+changetype: modify
+add: member
+member: uid=adminperras,ou=users,dc=perras,dc=fr
+
+# jumpserver-admins
+dn: cn=jumpserver-admins,ou=groups,dc=perras,dc=fr
+changetype: modify
+add: member
+member: uid=adminperras,ou=users,dc=perras,dc=fr
